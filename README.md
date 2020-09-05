@@ -8,3 +8,9 @@ CREATE TYPE tpproduto AS(
 	peso NUMERIC(10,2)
 );
 ```
+```SQL
+CREATE TYPE tppagamento AS (
+	it_parcelas INT,
+	ft_valor NUMERIC(10,2)
+);
+```
