@@ -33,3 +33,10 @@ CREATE TABLE IF NOT EXISTS pessoa (
 	referencia TEXT
 );
 ```
+```SQL
+CREATE TABLE IF NOT EXISTS pessoafisica (
+	num_pessoafisica SERIAL NOT NULL PRIMARY KEY,
+	it_cpf VARCHAR(9),
+	dt_nascimento DATE
+) INHERITS (pessoa);
+```
