@@ -48,45 +48,6 @@ CREATE TABLE IF NOT EXISTS pessoajuridica (
 ) INHERITS (pessoa);
 ```
 ```SQL
-CREATE TABLE IF NOT EXISTS pedido (
-	dataapanha DATE,
-	localapanha tpend,
-	responsavel VARCHAR(255),
-	dataentrega DATE,
-	localentrega tpend,
-	valortransporte NUMERIC(10,2),
-	valorassegurado NUMERIC(10,2),
-	formapagamento tppagamento,
-	situacaopagamento BOOL,
-	observacao TEXT
-);
-```
-```SQL
-CREATE TABLE IF NOT EXISTS pedidomudanca (
-	num_pedidomudanca SERIAL NOT NULL,
-	listamoveis TEXT[]
-) INHERITS (pedido);
-```
-```sql
-CREATE TABLE IF NOT EXISTS pedidoTRANSCARGA (
-	num_pedidoTRANSCARGA SERIAL NOT NULL,
-	listaPRODUTO tpproduto
-) INHERITS (pedido);
-```
-```sql
-CREATE TABLE IF NOT EXISTS pessoafisica_pedidoTRANSCARGA (
-	pessoa_fisica_fkey INT REFERENCES pessoafisica (num_pessoafisica),
-	
-	pedido_transcarga_fkey INT REFERENCES pedidoTRANSCARGA (num_pedidoTRANSCARGA)
-);
-```
-```sql
-CREATE TABLE IF NOT EXISTS pessoajuridica_pedidoTRANSCARGA(
-	pessoa_juridica_fkey INT REFERENCES pessoajuridica (num_pessoajuridica),
-	pedido_transcarga_fkey INT REFERENCES pedidoTRANSCARGA (num_pedidoTRANSCARGA)
-);
-```
-```SQL
 CREATE TABLE IF NOT EXISTS pedido_key (
 	num_pedido INT PRIMARY KEY,
 	dataapanha DATE,
@@ -110,4 +71,16 @@ CREATE TABLE IF NOT EXISTS pedidomudanca_KEY (
 CREATE TABLE IF NOT EXISTS pedidoTRANSCARGA_KEY (
 		listaPRODUTO tpproduto
 ) INHERITS (pedido_KEY);
+```
+```SQL
+CREATE TABLE IF NOT EXISTS pessoajuridica_pedido(
+	pessoa_juridica_fkey INT REFERENCES pessoajuridica (num_pessoajuridica),
+	pedido_mudanca_fkey INT REFERENCES pedido_KEY (num_pedido)
+);
+```
+```SQL
+CREATE TABLE IF NOT EXISTS pessoafisica_pedido(
+	pessoa_fisica_fkey INT REFERENCES pessoafisica (num_pessoafisica),
+	pedido_mudanca_fkey INT REFERENCES pedido_KEY (num_pedido)
+);
 ```
