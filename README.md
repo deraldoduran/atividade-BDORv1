@@ -24,3 +24,12 @@ CREATE TYPE tpend AS(
 	estado VARCHAR(2)
 );
 ```
+```SQL
+CREATE TABLE IF NOT EXISTS pessoa (
+	datacadastro DATE,
+	endereco tpend,
+	telefone TEXT[],
+	email VARCHAR(50),
+	referencia TEXT
+);
+```
