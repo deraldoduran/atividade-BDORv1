@@ -86,3 +86,18 @@ CREATE TABLE IF NOT EXISTS pessoajuridica_pedidoTRANSCARGA(
 	pedido_transcarga_fkey INT REFERENCES pedidoTRANSCARGA (num_pedidoTRANSCARGA)
 );
 ```
+```SQL
+CREATE TABLE IF NOT EXISTS pedido_key (
+	num_pedido INT PRIMARY KEY,
+	dataapanha DATE,
+	localapanha tpend,
+	responsavel VARCHAR(255),
+	dataentrega DATE,
+	localentrega tpend,
+	valortransporte NUMERIC(10,2),
+	valorassegurado NUMERIC(10,2),
+	formapagamento tppagamento,
+	situacaopagamento BOOL,
+	observacao TEXT
+);
+```
