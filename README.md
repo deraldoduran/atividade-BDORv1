@@ -73,3 +73,16 @@ CREATE TABLE IF NOT EXISTS pedidoTRANSCARGA (
 	listaPRODUTO tpproduto
 ) INHERITS (pedido);
 ```
+```sql
+CREATE TABLE IF NOT EXISTS pessoafisica_pedidoTRANSCARGA (
+	pessoa_fisica_fkey INT REFERENCES pessoafisica (num_pessoafisica),
+	
+	pedido_transcarga_fkey INT REFERENCES pedidoTRANSCARGA (num_pedidoTRANSCARGA)
+);
+```
+```sql
+CREATE TABLE IF NOT EXISTS pessoajuridica_pedidoTRANSCARGA(
+	pessoa_juridica_fkey INT REFERENCES pessoajuridica (num_pessoajuridica),
+	pedido_transcarga_fkey INT REFERENCES pedidoTRANSCARGA (num_pedidoTRANSCARGA)
+);
+```
