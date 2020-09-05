@@ -14,3 +14,13 @@ CREATE TYPE tppagamento AS (
 	ft_valor NUMERIC(10,2)
 );
 ```
+```sql
+CREATE TYPE tpend AS(
+	rua VARCHAR(100),
+	numero INT,
+	complemento VARCHAR(50),
+	bairro VARCHAR(50),
+	cidade VARCHAR(50),
+	estado VARCHAR(2)
+);
+```
