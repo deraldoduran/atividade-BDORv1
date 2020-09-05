@@ -40,3 +40,10 @@ CREATE TABLE IF NOT EXISTS pessoafisica (
 	dt_nascimento DATE
 ) INHERITS (pessoa);
 ```
+```sql
+CREATE TABLE IF NOT EXISTS pessoajuridica (
+	num_pessoajuridica SERIAL NOT NULL PRIMARY KEY,
+	it_cgc VARCHAR(14),
+	it_inscrestadual VARCHAR(14)
+) INHERITS (pessoa);
+```
