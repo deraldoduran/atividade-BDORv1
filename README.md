@@ -101,3 +101,13 @@ CREATE TABLE IF NOT EXISTS pedido_key (
 	observacao TEXT
 );
 ```
+```SQL
+CREATE TABLE IF NOT EXISTS pedidomudanca_KEY (
+	listamoveis TEXT[]
+) INHERITS (pedido_KEY);
+```
+```SQL
+CREATE TABLE IF NOT EXISTS pedidoTRANSCARGA_KEY (
+		listaPRODUTO tpproduto
+) INHERITS (pedido_KEY);
+```
