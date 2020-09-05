@@ -61,3 +61,9 @@ CREATE TABLE IF NOT EXISTS pedido (
 	observacao TEXT
 );
 ```
+```SQL
+CREATE TABLE IF NOT EXISTS pedidomudanca (
+	num_pedidomudanca SERIAL NOT NULL,
+	listamoveis TEXT[]
+) INHERITS (pedido);
+```
