@@ -67,3 +67,9 @@ CREATE TABLE IF NOT EXISTS pedidomudanca (
 	listamoveis TEXT[]
 ) INHERITS (pedido);
 ```
+```sql
+CREATE TABLE IF NOT EXISTS pedidoTRANSCARGA (
+	num_pedidoTRANSCARGA SERIAL NOT NULL,
+	listaPRODUTO tpproduto
+) INHERITS (pedido);
+```
