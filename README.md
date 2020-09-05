@@ -47,3 +47,17 @@ CREATE TABLE IF NOT EXISTS pessoajuridica (
 	it_inscrestadual VARCHAR(14)
 ) INHERITS (pessoa);
 ```
+```SQL
+CREATE TABLE IF NOT EXISTS pedido (
+	dataapanha DATE,
+	localapanha tpend,
+	responsavel VARCHAR(255),
+	dataentrega DATE,
+	localentrega tpend,
+	valortransporte NUMERIC(10,2),
+	valorassegurado NUMERIC(10,2),
+	formapagamento tppagamento,
+	situacaopagamento BOOL,
+	observacao TEXT
+);
+```
