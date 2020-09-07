@@ -158,3 +158,38 @@ insert into  pessoajuridica_pedidotranscarga values (1,1),(2,3),(3,5),(4,7),(5,9
 ```sql
 insert into  pessoafisica_pedidotranscarga values (1,2),(2,4),(3,6),(4,8),(5,10);
 ```
+```SQL
+CREATE TABLE IF NOT EXISTS auditoria (
+	operacao VARCHAR(50) NOT NULL,
+	usuario VARCHAR(50) NOT NULL,
+	DATA TIMESTAMP NOT NULL,
+	num_pedido_novo INT,
+	num_pedido INT,
+	valortransporte_NOVO NUMERIC(10,2),
+	valortransporte NUMERIC(10,2),
+	valorassegurado_NOVO NUMERIC(10,2),
+	valorassegurado NUMERIC(10,2)
+);
+
+CREATE OR REPLACE FUNCTION processa_auditoria() RETURNS
+TRIGGER AS $log$
+BEGIN
+  IF (TG_OP = 'DELETE') THEN
+  INSERT INTO auditoria SELECT 'EXCLUSAO', USER, NOW(), NEW.*, OLD.*;
+  RETURN OLD;
+  ELSIF (TG_OP = 'UPDATE') THEN
+  INSERT INTO auditoria SELECT 'ATUALIZACAO', USER, NOW(), NEW.*, OLD.*;
+  RETURN NEW;
+   ELSIF (TG_OP = 'INSERT') THEN
+  INSERT INTO auditoria SELECT 'INSERCAO', USER, NOW(), NEW.*;
+  RETURN NEW;
+  END IF;
+  RETURN NULL;
+END;
+$log$ LANGUAGE plpgsql;
+
+CREATE TRIGGER gatilho_auditoria
+AFTER INSERT OR UPDATE OR DELETE
+ON pedido
+FOR EACH ROW EXECUTE PROCEDURE processa_auditoria();
+```
