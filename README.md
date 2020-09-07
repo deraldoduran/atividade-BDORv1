@@ -193,3 +193,6 @@ AFTER INSERT OR UPDATE OR DELETE
 ON pedido
 FOR EACH ROW EXECUTE PROCEDURE processa_auditoria();
 ```
+```sql
+UPDATE pedidotranscarga SET valortransporte = 800.00 WHERE valortransporte = 725.88;
+```
