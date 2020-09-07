@@ -220,3 +220,6 @@ CREATE TABLE IF NOT EXISTS venda_pessoajuridica_pessoafisica (
 	produto_transportado_fkey INT REFERENCES pedidotranscarga (num_pedido_transcarga)
 );
 ```
+```sql
+INSERT INTO venda_pessoajuridica_pessoafisica VALUES (2,5,12);
+```
