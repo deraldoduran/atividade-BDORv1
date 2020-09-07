@@ -223,3 +223,8 @@ CREATE TABLE IF NOT EXISTS venda_pessoajuridica_pessoafisica (
 ```sql
 INSERT INTO venda_pessoajuridica_pessoafisica VALUES (2,5,12);
 ```
+```sql
+CREATE VIEW venda_pjuridica_para_pfisica (Comprador, Comprador_email, Vendedor, Vendedor_email, Produto, Quantidade) AS
+SELECT (PF).it_cpf, (PF).email, (PJ).it_inscrestadual, (PJ).email, (T).listaPRODUTO.produto, (T).listaPRODUTO.quantidade  FROM pessoafisica PF, pessoajuridica PJ, pedidotranscarga T
+WHERE (PF).num_pessoafisica = (PJ).num_pessoajuridica AND (PJ).num_pessoajuridica = (T).num_pedido_transcarga;
+```
