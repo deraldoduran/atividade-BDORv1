@@ -66,13 +66,13 @@ CREATE TABLE IF NOT EXISTS pedido (
 CREATE TABLE IF NOT EXISTS pedidomudanca (
 	num_pedido_mudanca SERIAL NOT NULL PRIMARY KEY,
 	listamoveis TEXT[]
-) INHERITS (pedido_KEY);
+) INHERITS (pedido);
 ```
 ```SQL
 CREATE TABLE IF NOT EXISTS pedidotranscarga (
 		num_pedido_transcarga SERIAL NOT NULL PRIMARY KEY,
 		listaPRODUTO tpproduto
-) INHERITS (pedido_KEY);
+) INHERITS (pedido);
 ```
 ```SQL
 CREATE TABLE IF NOT EXISTS pessoajuridica_pedidomudanca(
