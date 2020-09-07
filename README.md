@@ -233,3 +233,19 @@ CREATE VIEW venda_pjuridica_para_pfisica_endereçoentrega (rua_entrega, num_entr
 SELECT (T).localentrega.rua, (T).localentrega.numero, (PF).it_cpf, (PF).email, (PJ).it_inscrestadual, (PJ).email, (T).listaPRODUTO.produto, (T).listaPRODUTO.quantidade  FROM pessoafisica PF, pessoajuridica PJ, pedidotranscarga T
 WHERE (PF).num_pessoafisica = (PJ).num_pessoajuridica AND (PJ).num_pessoajuridica = (T).num_pedido_transcarga;
 ```
+```sql
+CREATE TABLE IF NOT EXISTS mudanca_pessoajuridica_pessoafisica (
+	compra_pfisica_fkey INT REFERENCES  pessoafisica (num_pessoafisica),
+	venda_pjuridica_fkey INT REFERENCES pessoajuridica (num_pessoajuridica),
+	produto_mudanca_fkey INT REFERENCES pedidomudanca (num_pedido_mudanca)
+);
+```
+```sql
+insert into mudanca_pessoajuridica_pessoafisica values (5,1,17);
+```
+```sql
+CREATE VIEW mudança_pjuridica_para_pfisica_endereçoentrega (rua_entrega, num_entrega, Transportado, Transportado_email, Entregador, Entregador_email, lista) AS
+SELECT (T).localentrega.rua, (T).localentrega.numero, (PF).it_cpf, (PF).email, (PJ).it_inscrestadual, (PJ).email, (T).listamoveis
+FROM pessoafisica PF, pessoajuridica PJ, pedidomudanca T, mudanca_pessoajuridica_pessoafisica M 
+WHERE (PF).num_pessoafisica = (M).compra_pfisica_fkey AND (PJ).num_pessoajuridica = (M).venda_pjuridica_fkey AND (T).num_pedido_mudanca = 17;
+```
