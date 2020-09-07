@@ -196,3 +196,6 @@ FOR EACH ROW EXECUTE PROCEDURE processa_auditoria();
 ```sql
 UPDATE pedidotranscarga SET valortransporte = 800.00 WHERE valortransporte = 725.88;
 ```
+```SQL
+UPDATE pedidomudanca SET SITUACAOPAGAMENTO = FALSE WHERE SITUACAOPAGAMENTO = TRUE;
+```
