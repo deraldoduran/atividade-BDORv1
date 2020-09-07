@@ -207,3 +207,9 @@ DELETE FROM pedidomudanca
 ```sql
 insert into pedidoTRANSCARGA (listaPRODUTO, num_pedido, dataapanha, localapanha, responsavel, dataentrega, localentrega, valortransporte, valorassegurado,formapagamento, situacaopagamento , observacao) values (ROW('Rouge', 8, 969.50), 145, '2020-04-24', ROW('Fohn', '3315', 'Rue', 'Tomate', 'Cagmanaba', 'Od'), 'Friedrich', '2020-03-30', ROW('Maple', '8704', 'Pass', 'I.D.M.Supply Company', 'Anjiang', 'Ry'), 788.14, 07.41, ROW(7, 269.66), true, 'India Charlie');
 ```
+```sql
+create view apanha_entrega (apanha_rua, apanha_numero, entrega_rua, entrega_numero, empresa, empresa_email) as
+select (T).localapanha.rua, (T).localapanha.numero, (T).localentrega.rua, (T).localentrega.numero, (J).it_cgc, (J).email
+from pedidoTRANSCARGA T,  pessoajuridica_pedidotranscarga JT, pessoajuridica J
+where (JT).pessoa_juridica_fkey = (J).num_pessoajuridica and (JT).pedido_transcarga_fkey = (T).num_pedido_transcarga;
+```
