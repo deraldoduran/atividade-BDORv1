@@ -199,3 +199,8 @@ UPDATE pedidotranscarga SET valortransporte = 800.00 WHERE valortransporte = 725
 ```SQL
 UPDATE pedidomudanca SET SITUACAOPAGAMENTO = FALSE WHERE SITUACAOPAGAMENTO = TRUE;
 ```
+```sql
+DELETE FROM pedidomudanca
+  WHERE responsavel = 'Sim';
+  --não podemos apagar por que ele se relaciona com outras tabelas dessa forma impedindo a exclusão
+  ```
