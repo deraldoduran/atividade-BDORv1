@@ -87,7 +87,7 @@ CREATE TABLE IF NOT EXISTS pessoafisica_pedidomudanca(
 );
 ```
 ```sql
-CREATE TABLE IF NOT EXISTS pessoajuridica_ pedidotranscarga(
+CREATE TABLE IF NOT EXISTS pessoajuridica_pedidotranscarga(
 	pessoa_juridica_fkey INT REFERENCES pessoajuridica (num_pessoajuridica),
 	pedido_transcarga_fkey INT REFERENCES pedidotranscarga (num_pedido_transcarga)
 );
@@ -128,7 +128,7 @@ insert into pedidomudanca (num_pedido,listamoveis,  dataapanha, localapanha, res
 insert into pedidomudanca (num_pedido, listamoveis,  dataapanha, localapanha, responsavel, dataentrega, localentrega, valortransporte, valorassegurado, formapagamento, situacaopagamento , observacao) values (140, '{{Glyburide}, {Glyburide}}', '2019-07-10', ROW('Westport', '0326', 'Park', 'Graspus graspus', 'Opinogóra Górna', 'Bp'), 'Tommie', '2020-05-01', ROW('Oneill', '585', 'Trail', 'MedVantx, Inc.', 'Sakerta Timur', 'Ow'), 490.82, 61.33, ROW(2, 382.10), false, 'India Juliett Echo');
 insert into pedidomudanca (num_pedido, listamoveis,  dataapanha, localapanha, responsavel, dataentrega, localentrega, valortransporte, valorassegurado, formapagamento, situacaopagamento , observacao) values (150, '{{Opalescence PF}, {Sodium Fluoride and Potassium Nitrate}}', '2018-11-16', ROW('Pennsylvania', '58014', 'Crossing', 'Vulpes vulpes', 'Pignon', 'Dy'), 'Iorgo', '2020-05-08', ROW('Derek', '75', 'Pass', 'Ultradent Products, Inc.', 'Widuchowa', 'Og'), 024.28, 69.70, ROW(5, 948.23), true, 'X-ray');
 insert into pedidomudanca (num_pedido, listamoveis,  dataapanha, localapanha, responsavel, dataentrega, localentrega, valortransporte, valorassegurado, formapagamento, situacaopagamento , observacao) values (160, '{{ALLIUM SATIVUM}, {ALLIUM SATIVUM}}', '2020-03-17', ROW('Warner', '35957', 'Place', 'Otaria flavescens', 'Sangalhos', 'Gr'), 'Bern', '2020-07-30', ROW('Lotheville', '009', 'Place', 'HOMEOLAB USA INC.', 'Xibing', 'Fn'), 897.88, 75.73, ROW(2, 688.56), false, 'X-ray India Tango');
-insert into pedidomudanca (num_pedido, listamoveis,  dataapanha, localapanha, responsavel, dataentrega, localentrega, valortransporte, valorassegurado, formapagamento, situacaopagamento , observacao) values (170, '{{Flurazepam}, {Flurazepam Hydrochloride}}', '2020-08-15', ROW('Kensington', '5', 'Point', 'Bettongia penicillata', 'Minshan', 'Bz'), 'Sim', '2020-02-29', ROW('Cody', '30', 'Alley', 'Golden State Medical Supply, Inc.'), 'Xindong', 'Ns', 756.13, 06.27, ROW(5, 820.61), false, 'Papa Echo');
+insert into pedidomudanca (num_pedido, listamoveis,  dataapanha, localapanha, responsavel, dataentrega, localentrega, valortransporte, valorassegurado, formapagamento, situacaopagamento , observacao) values (170, '{{Flurazepam}, {Flurazepam Hydrochloride}}', '2020-08-15', ROW('Kensington', '5', 'Point', 'Bettongia penicillata', 'Minshan', 'Bz'), 'Sim', '2020-02-29', ROW('Cody', '30', 'Alley', 'Golden State Medical Supply, Inc.', 'Xindong', 'Ns'), 756.13, 06.27, ROW(5, 820.61), false, 'Papa Echo');
 insert into pedidomudanca (num_pedido, listamoveis,  dataapanha, localapanha, responsavel, dataentrega, localentrega, valortransporte, valorassegurado, formapagamento, situacaopagamento , observacao) values (180, '{{Compulsin}, {Arsenicum Album}, {Aresnicum Iodatum}, {Calcarea Carbonica}, {Coffea Cruda}, {Iodum}, {Mancinella}, {Physostigma}, {Silicea}}', '2020-08-22', ROW('Morningstar', '33', 'Plaza', 'Ursus americanus', 'Aleksandrovka', 'Dc'), 'Moises', '2019-12-09', ROW('Lukken', '9757', 'Park', 'Ionx Holdings d/b/a HelloLife Inc.', 'Jiuhe', 'Qp'), 383.94, 54.60, ROW(2, 155.61), false, 'Yankee Delta Kilo');
 insert into pedidomudanca (num_pedido, listamoveis,  dataapanha, localapanha, responsavel, dataentrega, localentrega, valortransporte, valorassegurado, formapagamento, situacaopagamento , observacao) values (190, '{{Gamunex-C}, {Immune Globulin Intravenous (Human)}, {10% Caprylate Chromatography Purified}}', '2019-08-05', ROW('Kennedy', '5604', 'Junction', 'Canis lupus baileyi', 'San Diego', 'Hf'), 'Claybourne', '2020-09-04', ROW('Dottie', '9250', 'Crossing', 'GRIFOLS USA, LLC', 'Curry', 'Ko'), 956.68, 59.17, ROW(7, 956.95), true, 'Sierra Oscar X-ray');
 
@@ -151,4 +151,10 @@ insert into pessoajuridica_pedidomudanca values (1,8),(2,10),(3,12),(4,14),(5,16
 ```
 ```sql
 insert into pessoafisica_pedidomudanca values (1,9),(2,11),(3,13),(4,15),(5,17);
+```
+```sql
+insert into  pessoajuridica_pedidotranscarga values (1,1),(2,3),(3,5),(4,7),(5,9);
+```
+```sql
+insert into  pessoafisica_pedidotranscarga values (1,2),(2,4),(3,6),(4,8),(5,10);
 ```
