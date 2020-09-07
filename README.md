@@ -146,3 +146,9 @@ insert into pedidoTRANSCARGA (listaPRODUTO, num_pedido, dataapanha, localapanha,
 insert into pedidoTRANSCARGA (listaPRODUTO, num_pedido, dataapanha, localapanha, responsavel, dataentrega, localentrega, valortransporte, valorassegurado,formapagamento, situacaopagamento , observacao) values (ROW('Triamterene and Hydrochlorothiazide', 2, 420.82), 910, '2020-03-07', ROW('Springview', '8819', 'Plaza', 'Neophoca cinerea', 'Chvaletice', 'Jq'), 'Irvine', '2020-05-03', ROW('Sherman', '3436', 'Place', 'Preferred Pharmaceuticals, Inc', 'Fantino', 'Rs'), 982.87, 60.31, ROW(4, 249.82), true, 'Hotel');
 insert into pedidoTRANSCARGA (listaPRODUTO, num_pedido, dataapanha, localapanha, responsavel, dataentrega, localentrega, valortransporte, valorassegurado,formapagamento, situacaopagamento , observacao) values (ROW('Triazolam', 5, 172.32), 458, '2019-01-17', ROW('Anzinger', '280', 'Circle', 'Rana sp.', 'Awsīm', 'Rt'), 'Leland', '2019-10-12', ROW('Surrey', '305', 'Trail', 'Roxane Laboratories, Inc.', 'Calvário', 'Vw'), 844.50, 65.18, ROW(9, 543.71), false, 'Juliett Whiskey');
 ```
+```sql
+insert into pessoajuridica_pedidomudanca values (1,8),(2,10),(3,12),(4,14),(5,16);
+```
+```sql
+insert into pessoafisica_pedidomudanca values (1,9),(2,11),(3,13),(4,15),(5,17);
+```
