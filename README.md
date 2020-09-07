@@ -213,3 +213,10 @@ select (T).localapanha.rua, (T).localapanha.numero, (T).localentrega.rua, (T).lo
 from pedidoTRANSCARGA T,  pessoajuridica_pedidotranscarga JT, pessoajuridica J
 where (JT).pessoa_juridica_fkey = (J).num_pessoajuridica and (JT).pedido_transcarga_fkey = (T).num_pedido_transcarga;
 ```
+```sql
+CREATE TABLE IF NOT EXISTS venda_pessoajuridica_pessoafisica (
+	compra_pfisica_fkey INT REFERENCES  pessoafisica (num_pessoafisica),
+	venda_pjuridica_fkey INT REFERENCES pessoajuridica (num_pessoajuridica),
+	produto_transportado_fkey INT REFERENCES pedidotranscarga (num_pedido_transcarga)
+);
+```
