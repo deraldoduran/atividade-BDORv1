@@ -228,3 +228,8 @@ CREATE VIEW venda_pjuridica_para_pfisica (Comprador, Comprador_email, Vendedor, 
 SELECT (PF).it_cpf, (PF).email, (PJ).it_inscrestadual, (PJ).email, (T).listaPRODUTO.produto, (T).listaPRODUTO.quantidade  FROM pessoafisica PF, pessoajuridica PJ, pedidotranscarga T
 WHERE (PF).num_pessoafisica = (PJ).num_pessoajuridica AND (PJ).num_pessoajuridica = (T).num_pedido_transcarga;
 ```
+```sql
+CREATE VIEW venda_pjuridica_para_pfisica_endereçoentrega (rua_entrega, num_entrega, Comprador, Comprador_email, Vendedor, Vendedor_email, Produto, Quantidade) AS
+SELECT (T).localentrega.rua, (T).localentrega.numero, (PF).it_cpf, (PF).email, (PJ).it_inscrestadual, (PJ).email, (T).listaPRODUTO.produto, (T).listaPRODUTO.quantidade  FROM pessoafisica PF, pessoajuridica PJ, pedidotranscarga T
+WHERE (PF).num_pessoafisica = (PJ).num_pessoajuridica AND (PJ).num_pessoajuridica = (T).num_pedido_transcarga;
+```
